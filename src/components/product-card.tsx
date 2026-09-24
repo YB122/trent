@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { Heart, MapPin, Minus, Plus, ShoppingCart } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -51,7 +52,7 @@ export function ProductCard({
       className={cn("w-full", className)}
     >
       <Card className="group flex flex-col overflow-hidden transition-shadow hover:shadow-lg">
-        <div className="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+        <Link href={`/products/${p.id}`} className="relative block aspect-[4/3] overflow-hidden bg-zinc-100">
           {!loaded && (
             <Skeleton className="absolute inset-0 h-full w-full rounded-none" />
           )}
@@ -74,7 +75,10 @@ export function ProductCard({
             aria-label={t("favorite")}
             variant="secondary"
             size="icon"
-            onClick={() => toggleWish(p.id)}
+            onClick={(e) => {
+              e.preventDefault();
+              toggleWish(p.id);
+            }}
             className="absolute left-2 top-2 h-8 w-8 rounded-full bg-white/90 shadow hover:bg-white rtl:left-2 rtl:right-auto ltr:left-auto ltr:right-2"
           >
             <Heart
@@ -89,11 +93,13 @@ export function ProductCard({
           >
             {tc(p.category)}
           </Badge>
-        </div>
+        </Link>
       <CardContent className="flex flex-col gap-1">
-        <h3 className="clamp-2 text-[13px] font-bold leading-5 text-zinc-900">
-          {name}
-        </h3>
+        <Link href={`/products/${p.id}`} className="block">
+          <h3 className="clamp-2 text-[13px] font-bold leading-5 text-zinc-900 hover:text-brand">
+            {name}
+          </h3>
+        </Link>
           <div className="flex items-center gap-1 text-[11px] text-zinc-500">
             <MapPin className="h-3.5 w-3.5 text-brand" />
             {t("city")}
@@ -109,7 +115,10 @@ export function ProductCard({
               <Button
                 size="icon"
                 aria-label={t("addToCart")}
-                onClick={() => addToCart(p.id)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  addToCart(p.id);
+                }}
                 className="h-8 w-8 shrink-0 rounded-full"
               >
                 <ShoppingCart className="h-4 w-4" />
@@ -120,7 +129,10 @@ export function ProductCard({
                   size="icon"
                   variant="ghost"
                   aria-label="-"
-                  onClick={() => setQty(p.id, qty - 1)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setQty(p.id, qty - 1);
+                  }}
                   className="h-6 w-6 rounded-full hover:bg-white"
                 >
                   <Minus className="h-3.5 w-3.5" />
@@ -132,7 +144,10 @@ export function ProductCard({
                   size="icon"
                   variant="ghost"
                   aria-label="+"
-                  onClick={() => setQty(p.id, qty + 1)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setQty(p.id, qty + 1);
+                  }}
                   className="h-6 w-6 rounded-full hover:bg-white"
                 >
                   <Plus className="h-3.5 w-3.5" />

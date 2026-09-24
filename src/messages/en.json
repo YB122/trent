@@ -96,5 +96,19 @@
     "purchase": "Purchase total",
     "checkout": "Checkout",
     "continue": "Continue shopping"
+  },
+  "details": {
+    "back": "Back",
+    "addToCart": "Add to cart",
+    "save": "Save",
+    "saved": "Saved",
+    "goToCart": "Go to cart →",
+    "about": "About this item",
+    "aboutBody": "Available for rent and purchase with delivery in Riyadh and ongoing support. Excellent condition, ready for pickup.",
+    "delivery": "Fast delivery within Riyadh",
+    "secure": "Secure payment and rental insurance",
+    "support": "Support before and after renting",
+    "contactForPrice": "Contact for price",
+    "related": "Similar products"
   }
 }
