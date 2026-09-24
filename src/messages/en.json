@@ -39,14 +39,17 @@
     "viewed": "Most viewed",
     "recent": "Recently added",
     "foryou": "You may like",
-    "viewAll": "View all"
+    "viewAll": "View all",
+    "error": "Couldn't load products",
+    "retry": "Retry"
   },
   "product": {
     "sale": "Buy",
     "day": "Day",
     "city": "Riyadh",
     "currency": "SAR",
-    "favorite": "Favorite"
+    "favorite": "Favorite",
+    "addToCart": "Add to cart"
   },
   "hero": {
     "alt": "National Day offers"
@@ -75,5 +78,23 @@
     "add": "Add",
     "orders": "Orders",
     "account": "Account"
+  },
+  "wishlist": {
+    "title": "Favorites",
+    "empty": "No favorites yet",
+    "emptyDesc": "Tap the heart on any product to save it here",
+    "browse": "Browse products"
+  },
+  "cart": {
+    "title": "Cart",
+    "empty": "Your cart is empty",
+    "emptyDesc": "Add products from home to start renting",
+    "browse": "Browse products",
+    "remove": "Remove",
+    "clear": "Clear cart",
+    "perDay": "Daily rental total",
+    "purchase": "Purchase total",
+    "checkout": "Checkout",
+    "continue": "Continue shopping"
   }
 }
