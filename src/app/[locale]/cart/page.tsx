@@ -75,21 +75,25 @@ export default function CartPage() {
                 >
                   <Card>
                     <CardContent className="flex gap-3 p-3">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={`/products/${p.id}.jpeg`}
-                        alt={productTitle(p, locale)}
-                        className="h-24 w-24 shrink-0 rounded-xl bg-zinc-100 object-cover"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src =
-                            "/trent/banner-desktop.jpeg";
-                        }}
-                      />
+                      <Link href={`/products/${p.id}`}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={`/products/${p.id}.jpeg`}
+                          alt={productTitle(p, locale)}
+                          className="h-24 w-24 shrink-0 rounded-xl bg-zinc-100 object-cover hover:opacity-90"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src =
+                              "/trent/banner-desktop.jpeg";
+                          }}
+                        />
+                      </Link>
                       <div className="flex min-w-0 flex-1 flex-col gap-1">
                         <div className="flex items-start justify-between gap-2">
-                          <h3 className="clamp-2 text-[13px] font-bold leading-5">
-                            {productTitle(p, locale)}
-                          </h3>
+                          <Link href={`/products/${p.id}`} className="min-w-0">
+                            <h3 className="clamp-2 text-[13px] font-bold leading-5 hover:text-brand">
+                              {productTitle(p, locale)}
+                            </h3>
+                          </Link>
                           <Button
                             variant="ghost"
                             size="icon"
