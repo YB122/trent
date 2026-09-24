@@ -2,19 +2,20 @@
 
 import { motion } from "motion/react";
 import { Minus, Plus, ShoppingCart, Trash2 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SiteHeader, BottomNav } from "@/components/site-chrome";
 import { useShop } from "@/store/shop";
-import { productById } from "@/data/products";
+import { productById, productTitle } from "@/data/products";
 
 export default function CartPage() {
   const t = useTranslations("cart");
   const tp = useTranslations("product");
   const tc = useTranslations("categories");
+  const locale = useLocale();
   const { cart, setQty, removeFromCart, clearCart, cartCount } = useShop();
 
   const lines = Object.entries(cart)
@@ -77,7 +78,7 @@ export default function CartPage() {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={`/products/${p.id}.jpeg`}
-                        alt={p.title}
+                        alt={productTitle(p, locale)}
                         className="h-24 w-24 shrink-0 rounded-xl bg-zinc-100 object-cover"
                         onError={(e) => {
                           (e.target as HTMLImageElement).src =
@@ -87,7 +88,7 @@ export default function CartPage() {
                       <div className="flex min-w-0 flex-1 flex-col gap-1">
                         <div className="flex items-start justify-between gap-2">
                           <h3 className="clamp-2 text-[13px] font-bold leading-5">
-                            {p.title}
+                            {productTitle(p, locale)}
                           </h3>
                           <Button
                             variant="ghost"

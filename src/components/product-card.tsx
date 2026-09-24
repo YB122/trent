@@ -3,14 +3,14 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Heart, MapPin, Minus, Plus, ShoppingCart } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import { useShop } from "@/store/shop";
-import type { Product } from "@/data/products";
+import { productTitle, type Product } from "@/data/products";
 
 export function Price({ value, label }: { value: number; label: string }) {
   const t = useTranslations("product");
@@ -34,6 +34,8 @@ export function ProductCard({
 }) {
   const t = useTranslations("product");
   const tc = useTranslations("categories");
+  const locale = useLocale();
+  const name = productTitle(p, locale);
   const { isWished, toggleWish, cart, addToCart, setQty } = useShop();
   const [loaded, setLoaded] = useState(false);
   const wished = isWished(p.id);
@@ -55,8 +57,8 @@ export function ProductCard({
           )}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`/products/${p.id}.jpeg`}
-            alt={p.title}
+          src={`/products/${p.id}.jpeg`}
+          alt={name}
             loading="lazy"
             onLoad={() => setLoaded(true)}
             className={`h-full w-full object-cover transition duration-500 group-hover:scale-105 ${
@@ -90,8 +92,8 @@ export function ProductCard({
         </div>
       <CardContent className="flex flex-col gap-1">
         <h3 className="clamp-2 text-[13px] font-bold leading-5 text-zinc-900">
-            {p.title}
-          </h3>
+          {name}
+        </h3>
           <div className="flex items-center gap-1 text-[11px] text-zinc-500">
             <MapPin className="h-3.5 w-3.5 text-brand" />
             {t("city")}
