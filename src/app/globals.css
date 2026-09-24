@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #0b6b4f;
+  --color-brand-dark: #084f3a;
+  --color-brand-light: #e6f4ef;
+  --color-accent: #f5b301;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  background: #f3f4f6;
+  color: #18181b;
+  font-family: "Segoe UI", Tahoma, Arial, "Noto Kufi Arabic", sans-serif;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

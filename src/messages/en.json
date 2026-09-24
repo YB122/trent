@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "title": "Trent | Rent anything",
+    "description": "Trent - Saudi platform for renting equipment, electronics, party supplies and photography gear"
+  },
+  "header": {
+    "search": "What are you looking for?",
+    "searchMobile": "Search by item, location or category",
+    "deliverTo": "Deliver to",
+    "locating": "Locating...",
+    "favorites": "Favorites",
+    "cart": "Cart",
+    "account": "Your account",
+    "langName": "العربية"
+  },
+  "nav": {
+    "home": "Home",
+    "stores": "Stores",
+    "categories": "Categories",
+    "notifications": "Notifications",
+    "messages": "Messages",
+    "orders": "My orders",
+    "map": "Map"
+  },
+  "categories": {
+    "title": "Categories",
+    "equipment": "Equipment rental",
+    "construction": "Construction gear",
+    "party": "Party supplies",
+    "photo": "Photography gear",
+    "personal": "Personal items",
+    "electronics": "Electronics",
+    "other": "Other",
+    "products": "products"
+  },
+  "sections": {
+    "top": "Most requested",
+    "new": "New on Trent",
+    "viewed": "Most viewed",
+    "recent": "Recently added",
+    "foryou": "You may like",
+    "viewAll": "View all"
+  },
+  "product": {
+    "sale": "Buy",
+    "day": "Day",
+    "city": "Riyadh",
+    "currency": "SAR",
+    "favorite": "Favorite"
+  },
+  "hero": {
+    "alt": "National Day offers"
+  },
+  "trust": {
+    "delivery": "Fast delivery",
+    "deliveryDesc": "Get your item anywhere in Riyadh",
+    "secure": "Secure payment",
+    "secureDesc": "Protected payments and rental insurance",
+    "support": "Always-on support",
+    "supportDesc": "With you before and after renting"
+  },
+  "footer": {
+    "about": "A Saudi platform to rent everything: equipment, electronics, party supplies and photography gear.",
+    "quick": "Quick links",
+    "accountT": "Your account",
+    "contact": "Contact",
+    "login": "Login",
+    "address": "Riyadh, Saudi Arabia",
+    "otherLang": "النسخة العربية متوفرة",
+    "rights": "All rights reserved © Trent 2026"
+  },
+  "mobileNav": {
+    "home": "Home",
+    "stores": "Stores",
+    "add": "Add",
+    "orders": "Orders",
+    "account": "Account"
+  }
+}
